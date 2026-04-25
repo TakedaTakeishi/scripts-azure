@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Quiz — Evaluación Técnica</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Space+Mono:wght@400;700&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Scanline overlay -->
+  <div class="scanlines"></div>
+  <!-- Grid background -->
+  <div class="grid-bg"></div>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="header-tag">// EVALUACIÓN</div>
+      <h1 class="site-title">
+        <span class="title-prefix">&lt;</span>
+        Diagnóstico: Modelo de Despliegue de Nube
+        <span class="title-suffix">/&gt;</span>
+      </h1>
+      <div class="header-meta">
+        <span class="blink-dot"></span>
+        <span>SISTEMA ACTIVO</span>
+        <span class="sep">|</span>
+        <span id="clock">00:00:00</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN LAYOUT -->
+  <main class="layout">
+
+    <!-- FORM SECTION -->
+    <section class="form-section">
+      <div class="terminal-bar">
+        <span class="dot red"></span>
+        <span class="dot yellow"></span>
+        <span class="dot green"></span>
+        <span class="terminal-title">quiz.exe — en ejecución</span>
+      </div>
+
+      <form id="quizForm" novalidate>
+
+        <!-- Q1 -->
+        <div class="question-block" data-q="1">
+          <div class="q-number">01</div>
+          <div class="q-content">
+            <p class="q-text"><code>Soberanía y Sensibilidad de Datos</code><br>¿Cuál es el requisito más estricto de cumplimiento normativo o legal que rige sus datos?</p>
+            <div class="options">
+              <label class="option"><input type="radio" name="q1" value="a"><span class="radio-custom"></span>A) Sin restricciones mayores; podemos alojar datos en cualquier país (Nube Pública).</label>
+              <label class="option"><input type="radio" name="q1" value="b"><span class="radio-custom"></span>B) Cumplimiento estándar (GDPR/LFPDPPP), aceptamos certificaciones de nube.</label>
+              <label class="option"><input type="radio" name="q1" value="c"><span class="radio-custom"></span>C) Datos altamente sensibles (financieros/salud) que requieren auditoría física.</label>
+              <label class="option"><input type="radio" name="q1" value="d"><span class="radio-custom"></span>D) Soberanía Nacional/Militar: los datos NO pueden salir de nuestras instalaciones.</label>
+            </div>
+            <p class="error-msg">⚠ Campo requerido</p>
+          </div>
+        </div>
+
+        <!-- Q2 -->
+        <div class="question-block" data-q="2">
+          <div class="q-number">02</div>
+          <div class="q-content">
+            <p class="q-text"><code>Variabilidad de la Carga de Trabajo</code><br>¿Cómo se comporta la demanda de recursos (CPU/RAM/Tráfico) a lo largo del año?</p>
+            <div class="options">
+              <label class="option"><input type="radio" name="q2" value="a"><span class="radio-custom"></span>A) Impredecible con picos masivos repentinos (Necesidad de alta elasticidad).</label>
+              <label class="option"><input type="radio" name="q2" value="b"><span class="radio-custom"></span>B) Variable pero con patrones estacionales conocidos (Cierre de mes, campañas).</label>
+              <label class="option"><input type="radio" name="q2" value="c"><span class="radio-custom"></span>C) Muy estable y predecible; consumo plano todo el año.</label>
+              <label class="option"><input type="radio" name="q2" value="d"><span class="radio-custom"></span>D) Cargas de alto rendimiento constante (HPC) que nunca deben bajar de capacidad.</label>
+            </div>
+            <p class="error-msg">⚠ Campo requerido</p>
+          </div>
+        </div>
+
+        <!-- Q3 -->
+        <div class="question-block" data-q="3">
+          <div class="q-number">03</div>
+          <div class="q-content">
+            <p class="q-text"><code>Modelo Financiero Preferido</code><br>¿Cómo prefiere la dirección financiera gestionar el presupuesto de TI?</p>
+            <div class="options">
+              <label class="option"><input type="radio" name="q3" value="a"><span class="radio-custom"></span>A) 100% OPEX: Factura mensual variable, sin inversión inicial.</label>
+              <label class="option"><input type="radio" name="q3" value="b"><span class="radio-custom"></span>B) Mixto: Pequeñas inversiones, pero preferencia por pago por uso.</label>
+              <label class="option"><input type="radio" name="q3" value="c"><span class="radio-custom"></span>C) Preferencia por CAPEX: Tenemos capital para invertir y amortizar a 3-5 años.</label>
+              <label class="option"><input type="radio" name="q3" value="d"><span class="radio-custom"></span>D) 100% CAPEX: Ya tenemos hardware comprado y debemos explotarlo al máximo.</label>
+            </div>
+            <p class="error-msg">⚠ Campo requerido</p>
+          </div>
+        </div>
+
+        <!-- Q4 -->
+        <div class="question-block" data-q="4">
+          <div class="q-number">04</div>
+          <div class="q-content">
+            <p class="q-text"><code>Infraestructura Actual (Legacy)</code><br>¿Cuál es su situación actual respecto a la infraestructura instalada?</p>
+            <div class="options">
+              <label class="option"><input type="radio" name="q4" value="a"><span class="radio-custom"></span>A) 'Greenfield': Startup o proyecto nuevo sin deuda técnica.</label>
+              <label class="option"><input type="radio" name="q4" value="b"><span class="radio-custom"></span>B) Servidores físicos al fin de su vida útil, no queremos renovar hardware.</label>
+              <label class="option"><input type="radio" name="q4" value="c"><span class="radio-custom"></span>C) Core crítico en hardware propietario difícil de virtualizar.</label>
+              <label class="option"><input type="radio" name="q4" value="d"><span class="radio-custom"></span>D) Data Center moderno propio con capacidad ociosa reciente.</label>
+            </div>
+            <p class="error-msg">⚠ Campo requerido</p>
+          </div>
+        </div>
+
+        <!-- Q5 -->
+        <div class="question-block" data-q="5">
+          <div class="q-number">05</div>
+          <div class="q-content">
+            <p class="q-text"><code>Tolerancia a la Latencia</code><br>¿Qué tan rápido debe responder su aplicación más crítica?</p>
+            <div class="options">
+              <label class="option"><input type="radio" name="q5" value="a"><span class="radio-custom"></span>A) Estándar web (segundos): No afecta si el servidor está lejos.</label>
+              <label class="option"><input type="radio" name="q5" value="b"><span class="radio-custom"></span>B) Baja latencia (decenas de ms): Servidor en la misma región geográfica.</label>
+              <label class="option"><input type="radio" name="q5" value="c"><span class="radio-custom"></span>C) Tiempo real estricto (<10 ms): Procesos industriales o trading.</label>
+              <label class="option"><input type="radio" name="q5" value="d"><span class="radio-custom"></span>D) Edge Computing (casi 0 ms): Procesamiento local obligatorio (robots, IoT).</label>
+            </div>
+            <p class="error-msg">⚠ Campo requerido</p>
+          </div>
+        </div>
+
+        <!-- Q6 -->
+        <div class="question-block" data-q="6">
+          <div class="q-number">06</div>
+          <div class="q-content">
+            <p class="q-text"><code>Capacidad Técnica del Equipo</code><br>¿Cuál es la madurez de su equipo de TI para administrar infraestructura?</p>
+            <div class="options">
+              <label class="option"><input type="radio" name="q6" value="a"><span class="radio-custom"></span>A) Baja/Nula: Queremos enfocarnos en el negocio, no en parchar servidores.</label>
+              <label class="option"><input type="radio" name="q6" value="b"><span class="radio-custom"></span>B) Media: Administramos SO, pero no queremos gestionar hardware.</label>
+              <label class="option"><input type="radio" name="q6" value="c"><span class="radio-custom"></span>C) Alta: Ingenieros expertos en virtualización y redes.</label>
+              <label class="option"><input type="radio" name="q6" value="d"><span class="radio-custom"></span>D) Muy Alta: Equipo capaz de mantener un Data Center completo y seguridad física.</label>
+            </div>
+            <p class="error-msg">⚠ Campo requerido</p>
+          </div>
+        </div>
+
+        <!-- Q7 -->
+        <div class="question-block" data-q="7">
+          <div class="q-number">07</div>
+          <div class="q-content">
+            <p class="q-text"><code>Nivel de Control Requerido</code><br>¿Qué nivel de acceso requiere sobre la 'pila' tecnológica?</p>
+            <div class="options">
+              <label class="option"><input type="radio" name="q7" value="a"><span class="radio-custom"></span>A) Mínimo (SaaS/PaaS): Solo quiero que la aplicación funcione.</label>
+              <label class="option"><input type="radio" name="q7" value="b"><span class="radio-custom"></span>B) Medio (IaaS Público): Necesito configurar SO y firewall.</label>
+              <label class="option"><input type="radio" name="q7" value="c"><span class="radio-custom"></span>C) Alto (Host Dedicado): Nadie más puede compartir el procesador físico.</label>
+              <label class="option"><input type="radio" name="q7" value="d"><span class="radio-custom"></span>D) Total (Bare Metal): Acceso a BIOS, cableado y storage físico.</label>
+            </div>
+            <p class="error-msg">⚠ Campo requerido</p>
+          </div>
+        </div>
+
+        <!-- Q8 -->
+        <div class="question-block" data-q="8">
+          <div class="q-number">08</div>
+          <div class="q-content">
+            <p class="q-text"><code>Estrategia de Proveedores</code><br>¿Cuál es su postura ante la dependencia de un proveedor (Vendor Lock-in)?</p>
+            <div class="options">
+              <label class="option"><input type="radio" name="q8" value="a"><span class="radio-custom"></span>A) Preferimos simplicidad: Un solo proveedor que resuelva todo.</label>
+              <label class="option"><input type="radio" name="q8" value="b"><span class="radio-custom"></span>B) Pragmática: Un proveedor principal, con respaldos externos.</label>
+              <label class="option"><input type="radio" name="q8" value="c"><span class="radio-custom"></span>C) Aversión al riesgo: No podemos depender de precios de terceros.</label>
+              <label class="option"><input type="radio" name="q8" value="d"><span class="radio-custom"></span>D) Independencia total: Debemos poseer la infraestructura para evitar bloqueos.</label>
+            </div>
+            <p class="error-msg">⚠ Campo requerido</p>
+          </div>
+        </div>
+
+        <!-- Q9 -->
+        <div class="question-block" data-q="9">
+          <div class="q-number">09</div>
+          <div class="q-content">
+            <p class="q-text"><code>Velocidad de Implementación</code><br>¿Con qué urgencia necesita desplegar nuevos recursos?</p>
+            <div class="options">
+              <label class="option"><input type="radio" name="q9" value="a"><span class="radio-custom"></span>A) Inmediata (Minutos): Agilidad es la prioridad #1.</label>
+              <label class="option"><input type="radio" name="q9" value="b"><span class="radio-custom"></span>B) Rápida (Horas/Días): Aprovisionamiento ágil.</label>
+              <label class="option"><input type="radio" name="q9" value="c"><span class="radio-custom"></span>C) Planificada (Semanas): Procesos de compra rigurosos.</label>
+              <label class="option"><input type="radio" name="q9" value="d"><span class="radio-custom"></span>D) Lenta (Meses): Estabilidad y validación física son prioridad.</label>
+            </div>
+            <p class="error-msg">⚠ Campo requerido</p>
+          </div>
+        </div>
+
+        <!-- Q10 -->
+        <div class="question-block" data-q="10">
+          <div class="q-number">10</div>
+          <div class="q-content">
+            <p class="q-text"><code>Conectividad y Continuidad</code><br>¿Si su conexión a internet falla totalmente, qué pasa con la operación?</p>
+            <div class="options">
+              <label class="option"><input type="radio" name="q10" value="a"><span class="radio-custom"></span>A) Se detiene todo: Somos un negocio digital.</label>
+              <label class="option"><input type="radio" name="q10" value="b"><span class="radio-custom"></span>B) Operación degradada: Toleramos la caída temporalmente.</label>
+              <label class="option"><input type="radio" name="q10" value="c"><span class="radio-custom"></span>C) Supervivencia local: La sucursal debe operar autónomamente.</label>
+              <label class="option"><input type="radio" name="q10" value="d"><span class="radio-custom"></span>D) Crítica: Necesitamos líneas dedicadas y operación offline robusta.</label>
+            </div>
+            <p class="error-msg">⚠ Campo requerido</p>
+          </div>
+        </div>
+
+        <!-- SUBMIT -->
+        <div class="submit-zone">
+          <div class="progress-bar-wrap">
+            <div class="progress-label"><span id="answered">0</span>/10 respondidas</div>
+            <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+          </div>
+          <button type="submit" class="btn-submit" id="submitBtn">
+            <span class="btn-prefix">$</span>
+            <span class="btn-text">ENVIAR RESPUESTAS</span>
+            <span class="btn-arrow">⟶</span>
+          </button>
+        </div>
+
+      </form>
+
+      <!-- SUCCESS STATE -->
+      <div class="success-screen" id="successScreen">
+        <div class="success-inner">
+          <div class="success-icon">✔</div>
+          <h2>Formulario Enviado</h2>
+          <p class="success-sub">// proceso completado sin errores</p>
+          <div class="success-code">
+            <span class="sc-line"><span class="sc-key">mensaje</span>: <span class="sc-val">"Respuestas recibidas"</span>,</span>
+            <span class="sc-line"><span class="sc-key">timestamp</span>: <span class="sc-val" id="ts"></span></span>
+          </div>
+                    <!-- RECOMENDACIÓN FINAL -->
+          <div id="recFinal" class="rec-final-wrap"></div>
+
+          <button class="btn-reset" onclick="resetForm()">↺ Reiniciar</button>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="terminal-bar">
+        <span class="dot red"></span>
+        <span class="dot yellow"></span>
+        <span class="dot green"></span>
+        <span class="terminal-title">team.config</span>
+      </div>
+      <div class="sidebar-inner">
+        <div class="team-label">// EQUIPO</div>
+        <h2 class="team-name">Team <span class="accent">Iron Cloud</span></h2>
+        <div class="divider-line"></div>
+        <ul class="members-list">
+          <li class="member">
+            <span class="member-id">@dev_01</span>
+            <span class="member-name">Bustillos Cruz Jonatan</span>
+            <span class="member-role">Máquina Virtual</span>
+          </li>
+          <li class="member">
+            <span class="member-id">@dev_02</span>
+            <span class="member-name">Enríquez Miranda Leonardo Andrés</span>
+            <span class="member-role">Backend Dev</span>
+          </li>
+          <li class="member">
+            <span class="member-id">@dev_03</span>
+            <span class="member-name">Frem Cortés José Angel</span>
+            <span class="member-role">Frontend Dev</span>
+          </li>
+          <li class="member">
+            <span class="member-id">@dev_04</span>
+            <span class="member-name">Posadas Villegas Octavio</span>
+            <span class="member-role">Documentación</span>
+          </li>
+          <li class="member">
+            <span class="member-id">@dev_05</span>
+            <span class="member-name">Yañez Torres Ethan Axel</span>
+            <span class="member-role">Documentación</span>
+          </li>          
+        </ul>
+        <div class="divider-line"></div>
+        <div class="sidebar-stats">
+          <div class="stat">
+            <span class="stat-val" id="sideAnswered">0</span>
+            <span class="stat-key">respondidas</span>
+          </div>
+          <div class="stat">
+            <span class="stat-val">10</span>
+            <span class="stat-key">total</span>
+          </div>
+          <div class="stat">
+            <span class="stat-val" id="sidePct">0%</span>
+            <span class="stat-key">avance</span>
+          </div>
+        </div>
+        <div class="mini-progress">
+          <div class="mini-fill" id="miniFill"></div>
+        </div>
+
+        <div class="sidebar-footer">
+          <span class="blink-cursor">█</span> sistema listo
+        </div>
+      </div>
+    </aside>
+
+  </main>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

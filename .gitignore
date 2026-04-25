@@ -1,0 +1,7 @@
+﻿# Auto-generated
+node_modules/
+venv/
+.venv/
+.env
+Thumbs.db
+desktop.ini

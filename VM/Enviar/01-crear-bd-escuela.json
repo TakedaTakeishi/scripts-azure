@@ -1,0 +1,18 @@
+{
+  "taskName": "Crear BD Escuela (MySQL)",
+  "description": "Sube y ejecuta crear_BD_escuela.sh con variables desde Templates/db-school.env",
+  "remoteBasePath": "/home/{user}/deploy/school",
+  "envFileLocal": "Templates/db-school.env",
+  "envFileRemote": "{remoteBasePath}/db-school.env",
+  "sources": [
+    {
+      "local": "RemoteScripts/crear_BD_escuela.sh",
+      "remote": "{remoteBasePath}/crear_BD_escuela.sh",
+      "chmod": "+x"
+    }
+  ],
+  "postUploadCommands": [
+    "chmod +x {remoteBasePath}/crear_BD_escuela.sh",
+    "bash {remoteBasePath}/crear_BD_escuela.sh --env-file {remoteBasePath}/db-school.env"
+  ]
+}

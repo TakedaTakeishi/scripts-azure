@@ -1,0 +1,28 @@
+﻿[
+    {
+        "rg":  "Practica01",
+        "vmName":  "Maquina01",
+        "user":  "joni",
+        "so":  "Canonical:ubuntu-24_04-lts:server:latest",
+        "vnet":  "",
+        "subnet":  "",
+        "location":  "mexicocentral",
+        "publicIp":  "158.23.183.161",
+        "keyPrivatePath":  "C:\\Users\\Joni\\Documents\\University\\7th Semester\\(NUBE) Cómputo en la nube\\Llaves\\Llave_AZ",
+        "keyPublicPath":  "C:\\Users\\Joni\\Documents\\University\\7th Semester\\(NUBE) Cómputo en la nube\\Llaves\\Llave_AZ.pub",
+        "updatedAt":  "2026-04-16T14:20:39"
+    },
+    {
+        "rg":  "Practica01",
+        "vmName":  "Maquina02",
+        "user":  "joni",
+        "so":  "Canonical:ubuntu-24_04-lts:server:latest",
+        "vnet":  "",
+        "subnet":  "",
+        "location":  "mexicocentral",
+        "publicIp":  "158.23.80.134",
+        "keyPrivatePath":  "C:\\Users\\Joni\\Documents\\University\\7th Semester\\(NUBE) Cómputo en la nube\\Llaves\\Llave_AZ",
+        "keyPublicPath":  "C:\\Users\\Joni\\Documents\\University\\7th Semester\\(NUBE) Cómputo en la nube\\Llaves\\Llave_AZ.pub",
+        "updatedAt":  "2026-04-16T14:20:42"
+    }
+]

@@ -1,0 +1,49 @@
+{
+  "taskName": "Desplegar Proyecto Nube (PHP + MySQL en Nginx)",
+  "description": "Sube proyecto_nube, importa quiz_db_final.sql, ajusta config PHP y publica en Nginx listo para usar.",
+  "remoteBasePath": "/home/{user}/deploy/proyecto_nube",
+  "envFileLocal": "Templates/web-stack.env",
+  "envFileRemote": "{remoteBasePath}/web-stack.env",
+  "preUploadCommands": [
+    "mkdir -p {remoteBasePath}/app/api {remoteBasePath}/app/config {remoteBasePath}/app/css {remoteBasePath}/app/js"
+  ],
+  "sources": [
+    {
+      "local": "RemoteScripts/deploy_proyecto_nube.sh",
+      "remote": "{remoteBasePath}/deploy_proyecto_nube.sh",
+      "chmod": "+x"
+    },
+    {
+      "local": "Enviar/proyecto_nube/index.html",
+      "remote": "{remoteBasePath}/app/index.html"
+    },
+    {
+      "local": "Enviar/proyecto_nube/README.md",
+      "remote": "{remoteBasePath}/app/README.md"
+    },
+    {
+      "local": "Enviar/proyecto_nube/quiz_db_final.sql",
+      "remote": "{remoteBasePath}/app/quiz_db_final.sql"
+    },
+    {
+      "local": "Enviar/proyecto_nube/api/submit.php",
+      "remote": "{remoteBasePath}/app/api/submit.php"
+    },
+    {
+      "local": "Enviar/proyecto_nube/config/db.php",
+      "remote": "{remoteBasePath}/app/config/db.php"
+    },
+    {
+      "local": "Enviar/proyecto_nube/css/styles.css",
+      "remote": "{remoteBasePath}/app/css/styles.css"
+    },
+    {
+      "local": "Enviar/proyecto_nube/js/main.js",
+      "remote": "{remoteBasePath}/app/js/main.js"
+    }
+  ],
+  "postUploadCommands": [
+    "chmod +x {remoteBasePath}/deploy_proyecto_nube.sh",
+    "bash {remoteBasePath}/deploy_proyecto_nube.sh --source-dir {remoteBasePath}/app --sql-file {remoteBasePath}/app/quiz_db_final.sql --env-file {remoteBasePath}/web-stack.env --deploy-user {user}"
+  ]
+}

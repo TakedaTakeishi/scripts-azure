@@ -1,0 +1,23 @@
+Capturas requeridas - Practica BD Escuela
+
+1) Paso 9 - Insercion teachers (admin)
+   Archivo de captura:
+   Nota:
+
+2) Paso 11 - Insercion teacher William Lee (gestion)
+   Archivo de captura:
+   Nota:
+
+3) Paso 13 - Insercion students (gestion)
+   Archivo de captura:
+   Nota:
+
+4) Paso 15 - Query estudiantes grade >= 10 (gestion)
+   Archivo de captura:
+   Nota:
+
+5) Paso 17 - Query teachers age <= 35 (admin)
+   Archivo de captura:
+   Nota:
+
+Resumen final:

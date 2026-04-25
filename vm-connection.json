@@ -1,0 +1,10 @@
+﻿{
+    "rg":  "ProyectoParcial01",
+    "vmName":  "Maquina01",
+    "user":  "joni",
+    "so":  "Canonical:ubuntu-24_04-lts:server:latest",
+    "publicIp":  "158.23.17.145",
+    "keyPrivatePath":  "C:\\Users\\Joni\\Documents\\University\\7th Semester\\(NUBE) Cómputo en la nube\\Llaves\\Llave_AZ",
+    "keyPublicPath":  "C:\\Users\\Joni\\Documents\\University\\7th Semester\\(NUBE) Cómputo en la nube\\Llaves\\Llave_AZ.pub",
+    "updatedAt":  "2026-04-23T14:10:55"
+}

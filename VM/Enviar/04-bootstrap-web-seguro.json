@@ -1,0 +1,18 @@
+{
+  "taskName": "Bootstrap web seguro (Nginx + PM2 + MySQL)",
+  "description": "Actualiza Ubuntu, aplica hardening fuerte, instala Nginx/PM2/MySQL y deja estructura lista para subir carpeta estatica.",
+  "remoteBasePath": "/home/{user}/deploy/web-stack",
+  "envFileLocal": "Templates/web-stack.env",
+  "envFileRemote": "{remoteBasePath}/web-stack.env",
+  "sources": [
+    {
+      "local": "RemoteScripts/bootstrap_web_seguro.sh",
+      "remote": "{remoteBasePath}/bootstrap_web_seguro.sh",
+      "chmod": "+x"
+    }
+  ],
+  "postUploadCommands": [
+    "chmod +x {remoteBasePath}/bootstrap_web_seguro.sh",
+    "bash {remoteBasePath}/bootstrap_web_seguro.sh --env-file {remoteBasePath}/web-stack.env --deploy-user {user}"
+  ]
+}

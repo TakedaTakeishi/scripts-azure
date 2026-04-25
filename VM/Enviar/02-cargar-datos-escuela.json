@@ -1,0 +1,25 @@
+{
+  "taskName": "Cargar datos escuela y queries de evidencia",
+  "description": "Inserta teachers/students y ejecuta queries de pasos 9,11,13,15,17",
+  "remoteBasePath": "/home/{user}/deploy/school",
+  "envFileLocal": "Templates/db-school.env",
+  "envFileRemote": "{remoteBasePath}/db-school.env",
+  "sources": [
+    {
+      "local": "RemoteScripts/crear_BD_escuela.sh",
+      "remote": "{remoteBasePath}/crear_BD_escuela.sh",
+      "chmod": "+x"
+    },
+    {
+      "local": "RemoteScripts/cargar_datos_escuela.sh",
+      "remote": "{remoteBasePath}/cargar_datos_escuela.sh",
+      "chmod": "+x"
+    }
+  ],
+  "postUploadCommands": [
+    "chmod +x {remoteBasePath}/crear_BD_escuela.sh",
+    "bash {remoteBasePath}/crear_BD_escuela.sh --env-file {remoteBasePath}/db-school.env",
+    "chmod +x {remoteBasePath}/cargar_datos_escuela.sh",
+    "bash {remoteBasePath}/cargar_datos_escuela.sh --env-file {remoteBasePath}/db-school.env --allow-gestion-teachers-grant true"
+  ]
+}

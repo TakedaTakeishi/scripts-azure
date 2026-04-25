@@ -1,0 +1,33 @@
+{
+  "taskName": "Desplegar aplicacion web escuela (PHP)",
+  "description": "Sube app PHP, instala Apache/PHP y publica en /var/www/html/school",
+  "remoteBasePath": "/home/{user}/deploy/school",
+  "envFileLocal": "Templates/db-school.env",
+  "envFileRemote": "{remoteBasePath}/db-school.env",
+  "sources": [
+    {
+      "local": "RemoteScripts/desplegar_pagina_web.sh",
+      "remote": "{remoteBasePath}/desplegar_pagina_web.sh",
+      "chmod": "+x"
+    },
+    {
+      "local": "Enviar/Pagina/config.php",
+      "remote": "{remoteBasePath}/webapp/config.php"
+    },
+    {
+      "local": "Enviar/Pagina/index.php",
+      "remote": "{remoteBasePath}/webapp/index.php"
+    },
+    {
+      "local": "Enviar/Pagina/style.css",
+      "remote": "{remoteBasePath}/webapp/style.css"
+    }
+  ],
+  "preUploadCommands": [
+    "mkdir -p {remoteBasePath}/webapp"
+  ],
+  "postUploadCommands": [
+    "chmod +x {remoteBasePath}/desplegar_pagina_web.sh",
+    "bash {remoteBasePath}/desplegar_pagina_web.sh --source-dir {remoteBasePath}/webapp --env-file {remoteBasePath}/db-school.env --web-root /var/www/html/school"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "taskName": "Template Futuro (Angular/Next/PM2/Nginx)",
+  "description": "Copia este JSON para futuras tareas de despliegue",
+  "remoteBasePath": "/home/{user}/deploy/app",
+  "sources": [
+    {
+      "local": "RemoteScripts/crear_BD_escuela.sh",
+      "remote": "{remoteBasePath}/example.sh"
+    }
+  ],
+  "postUploadCommands": [
+    "echo 'Define tus comandos en este archivo de config'"
+  ]
+}
